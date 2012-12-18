@@ -12,7 +12,8 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{TODO: Write a gem summary}
   gem.homepage      = ""
 
-  gem.add_runtime_dependency('sinatra')
+  gem.add_runtime_dependency('sinatra', ['~> 1.3.3'])
+  gem.add_runtime_dependency('haml',    ['~> 3.1.7'])
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
