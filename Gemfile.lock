@@ -3,6 +3,7 @@ PATH
   specs:
     greetings (0.0.1)
       haml (~> 3.1.7)
+      rdiscount (~> 1.6.8)
       sinatra (~> 1.3.3)
 
 GEM
@@ -12,6 +13,7 @@ GEM
     rack (1.4.1)
     rack-protection (1.3.2)
       rack
+    rdiscount (1.6.8)
     sinatra (1.3.3)
       rack (~> 1.3, >= 1.3.6)
       rack-protection (~> 1.2)
