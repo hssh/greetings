@@ -14,6 +14,7 @@ Gem::Specification.new do |gem|
 
   gem.add_runtime_dependency('sinatra',   ['~> 1.3.3'])
   gem.add_runtime_dependency('haml',      ['~> 3.1.7'])
+  gem.add_runtime_dependency('sass',      ['~> 3.2.3'])
   gem.add_runtime_dependency('rdiscount', ['~> 1.6.8'])
 
   gem.files         = `git ls-files`.split($/)
