@@ -14,8 +14,9 @@ Gem::Specification.new do |gem|
 
   gem.add_runtime_dependency('sinatra',   ['~> 1.3.3'])
   gem.add_runtime_dependency('haml',      ['~> 3.1.7'])
-  gem.add_runtime_dependency('sass',      ['~> 3.2.3'])
+  gem.add_runtime_dependency('sass',      ['~> 3.2.4'])
   gem.add_runtime_dependency('rdiscount', ['~> 1.6.8'])
+  gem.add_runtime_dependency('compass',   ['~> 0.12.2'])
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
