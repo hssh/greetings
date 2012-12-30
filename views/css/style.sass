@@ -1,3 +1,19 @@
+= vendor-prefix($name, $argument)
+  #{$name}: $argument
+  -webkit-#{$name}: $argument
+  -ms-#{$name}: $argument
+  -moz-#{$name}: $argument
+  -o-#{$name}: $argument
+
 body
   background-image: url('/img/background.png')
-  // background-color: black
+
+#card
+  width: 933px
+  height: 629px
+  margin: 100px auto 0 auto
+  +vendor-prefix(perspective, 3000px)
+
+#card img
+  box-shadow: 0 0 50px #000
+  +vendor-prefix(transform, rotateY(45deg))
