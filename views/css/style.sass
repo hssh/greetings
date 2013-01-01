@@ -1,5 +1,7 @@
 @import compass
 
+$fontcolor: #888
+
 @font-face
   font-family: 'KozMinPro-EL'
   src: url('../font/KozMinPro-ExtraLight.otf') format('opentype')
@@ -29,19 +31,29 @@ body
   height: 100%
   +backface-visibility(hidden)
 
-#card .front
+#card .image
 
-#card .back
+#card .message
   font-family: 'KozMinPro-EL'
-  font-size: 3ex
-  line-height: 5ex
+  font-size: 24px
+  line-height: 64px
   text-align: center
   vertical-align: middle
   padding: 20px
   width: 600px
   height: 320px
-  background-color: #FFF
+  background-color: #fff
   +transform(rotateY(180deg))
 
 #card.flipped
   +transform(rotateY(-180deg))
+
+footer
+  font-size: 12px
+  text-align: center
+  text-shadow: 0px 0px 1px #ccc
+  color: #888
+  margin-top: 20px
+
+footer a
+  color: #888
