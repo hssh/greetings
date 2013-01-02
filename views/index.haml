@@ -3,17 +3,16 @@
     :markdown
       You are using an **outdated** browser. Please [upgrade your browser](http://browsehappy.com/) or [activate Google Chrome Frame](http://www.google.com/chromeframe/?redirect=true) to improve your experience.
 
-%section.container
+%section#container
   #card
     %img.image{src: "/img/#{@card['image']}"}
     .message
-      %p
-        :markdown
-          #{@card['message']}
+      :markdown
+        #{@card['message']}
 
 %footer
   :markdown
-    Copyright &copy; NewYear hssh All Rights Reserved | [Developer information](/to/developers)
+    Copyright &copy; hebi-doshi hssh All Rights Reserved | [Developer Information](/to/developers)
 
 %script{src: '//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'}
 %script window.jQuery || document.write('<script src="/js/vendor/jquery-1.8.3.min.js"><\/script>')

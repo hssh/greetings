@@ -1,59 +1,79 @@
 @import compass
 
-$fontcolor: #888
+$font-family:          'KozMinPro-EL'
+$font-file:            '/font/KozMinPro-ExtraLight.otf'
+$font-src-format:      format('opentype')
+$background-image-url: url('/img/background.gif')
+$message-font-size:    18px
+$message-line-height:  $message-font-size * 2.5
+$fontcolor:            #888
+$card-width:           640px
+$card-height:          360px
+$footer-font-size:     12px
+$footer-top-margin:    30px
 
-@font-face
-  font-family: 'KozMinPro-EL'
-  src: url('../font/KozMinPro-ExtraLight.otf') format('opentype')
++font-face($font-family, font-files($font-file))
+
+=cardsize
+  width: $card-width
+  height: $card-height
+
+=fullsize
+  width: 100%
+  height: 100%
 
 body
-  background-image: url('/img/background.gif')
+  color: $fontcolor
+  text-shadow: 0px 0px 1px #ccc
+  background-image: $background-image-url
 
-.container
-  width: 640px
-  height: 360px
-  position: relative
+#container
+  +cardsize
   +perspective(3000px)
-  margin: 100px auto 0 auto
+  position: relative
+  margin: auto
+  margin-top: 50px
 
 #card
-  width: 100%
-  height: 100%
-  position: absolute
+  +fullsize
   +transform-style(preserve-3d)
   +transition(transform 1s)
+  position: absolute
 
-#card img, #card div
-  +box-shadow(0 0 50px #555)
+#card > *
+  +fullsize
+  +backface-visibility(hidden)
+  +box-shadow(0 0 50px #888)
   display: block
   position: absolute
-  width: 100%
-  height: 100%
-  +backface-visibility(hidden)
 
 #card .image
 
 #card .message
-  font-family: 'KozMinPro-EL'
-  font-size: 24px
-  line-height: 64px
-  text-align: center
-  vertical-align: middle
-  padding: 20px
-  width: 600px
-  height: 320px
-  background-color: #fff
+  +background-image(radial-gradient($card-width/2 $card-height/2, #fff $card-width/3, #eee $card-width))
   +transform(rotateY(180deg))
+  font-family: $font-family
+  font-size: $message-font-size
+  line-height: $message-line-height
+  text-align: center
+
+#card .message p
+  +cardsize
+  display: table-cell
+  vertical-align: middle
 
 #card.flipped
   +transform(rotateY(-180deg))
 
 footer
-  font-size: 12px
+  +text-shadow(0 0 1px #ccc)
   text-align: center
-  text-shadow: 0px 0px 1px #ccc
-  color: #888
-  margin-top: 20px
+  font-size: $footer-font-size
+  margin-top: $footer-top-margin
 
-footer a
-  color: #888
+a
+  +text-shadow(0 0 1px #888)
+  color: $fontcolor
+  text-decoration: none
+  &:hover
+    +text-shadow(0 0 1px #444)

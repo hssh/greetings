@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    greetings (0.0.1)
+    greetings (0.1.0)
       bson_ext (~> 1.8.0)
       compass (~> 0.12.2)
       haml (~> 3.1.7)
