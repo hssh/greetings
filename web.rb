@@ -19,22 +19,22 @@ def mongo_client
   @client = @client || MongoClient.from_uri
 end
 
-def find_card_to(recipient)
+def find_card(sender, recipient)
   card_collection = mongo_client['greetings']['cards']
-  doc = card_collection.find_one({recipient: recipient})
+  doc = card_collection.find_one({sender: sender, recipient: recipient})
   if doc.nil?
-    doc = card_collection.find_one({recipient: 'default'})
+    doc = card_collection.find_one({sender: 'default', recipient: 'default'})
   end
   doc
 end
 
 get '/' do
-  @card = find_card_to('default')
+  @card = find_card('default', 'default')
   haml :index
 end
 
-get '/to/:recipient' do
-  @card = find_card_to(params[:recipient])
+get '/:sender/to/:recipient' do
+  @card = find_card(params[:sender], params[:recipient])
   haml :index
 end
 
