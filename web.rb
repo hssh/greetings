@@ -28,17 +28,26 @@ def find_card(sender, recipient)
   doc
 end
 
+def title
+  title = "The greeting"
+  title << " to #{@recipient}" if @recipient != 'default'
+  title << " from #{@sender}" if @sender != 'default'
+  title
+end
+
 get '/' do
   @sender    = 'default'
   @recipient = 'default'
-  @card = find_card(@sender, @recipient)
+  @title     = title
+  @card      = find_card(@sender, @recipient)
   haml :index
 end
 
 get '/:sender/to/:recipient' do
   @sender    = params[:sender]
   @recipient = params[:recipient]
-  @card = find_card(@sender, @recipient)
+  @title     = title
+  @card      = find_card(@sender, @recipient)
   haml :index
 end
 
