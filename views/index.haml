@@ -5,8 +5,10 @@
 
 %section#container
   #card
-    %img.image{src: "/img/#{@card['image']}"}
+    .image
+      .arrow.arrow-left.out
     .message
+      .arrow.arrow-right.out
       :markdown
         #{@card['message']}
 

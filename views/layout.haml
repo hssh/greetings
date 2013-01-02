@@ -16,5 +16,6 @@
   %link{rel: 'stylesheet', href: '/css/main.css'}
   %link{rel: 'stylesheet', href: '/css/style.css'}
   %script{src: '/js/vendor/modernizr-2.6.2.min.js'}
+  %style= "#card .image {background-image: url(\"/img/#{@card['image']}\")}"
 %body= yield
 </html>

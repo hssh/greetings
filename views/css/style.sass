@@ -1,13 +1,15 @@
 @import compass
 
-$background-image-url: url('/img/background.gif')
-$message-font-size:    18px
-$message-line-height:  $message-font-size * 2.5
-$fontcolor:            #888
-$card-width:           640px
-$card-height:          360px
-$footer-font-size:     12px
-$footer-top-margin:    30px
+$background-image-url:  url('/img/background.gif')
+$arrow-left-image-url:  url('/img/arrow-left.png')
+$arrow-right-image-url: url('/img/arrow-right.png')
+$message-font-size:     18px
+$message-line-height:   $message-font-size * 2.5
+$fontcolor:             #888
+$card-width:            640px
+$card-height:           360px
+$footer-font-size:      12px
+$footer-top-margin:     30px
 
 =cardsize
   width: $card-width
@@ -20,7 +22,7 @@ $footer-top-margin:    30px
 body
   color: $fontcolor
   text-shadow: 0px 0px 1px #ccc
-  background-image: $background-image-url
+  +background-image($background-image-url)
 
 #container
   +cardsize
@@ -35,14 +37,14 @@ body
   +transition(transform 1s)
   position: absolute
 
-#card > *
+#card > div
   +fullsize
   +backface-visibility(hidden)
   +box-shadow(0 0 50px #888)
-  display: block
   position: absolute
 
 #card .image
+  +fullsize
 
 #card .message
   +background-image(radial-gradient($card-width/2 $card-height/2, #fff $card-width/3, #eee $card-width))
@@ -58,6 +60,26 @@ body
 
 #card.flipped
   +transform(rotateY(-180deg))
+
+.arrow
+  +backface-visibility(hidden)
+  position: absolute
+  width: 40px
+  height: 40px
+  top: 10px
+  left: 590px
+
+.arrow-left
+  +background-image($arrow-left-image-url)
+
+.arrow-right
+  +background-image($arrow-right-image-url)
+
+.hover
+  +opacity(.1)
+
+.out
+  +opacity(.05)
 
 footer
   +text-shadow(0 0 1px #ccc)

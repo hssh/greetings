@@ -29,12 +29,16 @@ def find_card(sender, recipient)
 end
 
 get '/' do
-  @card = find_card('default', 'default')
+  @sender    = 'default'
+  @recipient = 'default'
+  @card = find_card(@sender, @recipient)
   haml :index
 end
 
 get '/:sender/to/:recipient' do
-  @card = find_card(params[:sender], params[:recipient])
+  @sender    = params[:sender]
+  @recipient = params[:recipient]
+  @card = find_card(@sender, @recipient)
   haml :index
 end
 
