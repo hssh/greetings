@@ -1,8 +1,5 @@
 @import compass
 
-$font-family:          'KozMinPro-EL'
-$font-file:            '/font/KozMinPro-ExtraLight.otf'
-$font-src-format:      format('opentype')
 $background-image-url: url('/img/background.gif')
 $message-font-size:    18px
 $message-line-height:  $message-font-size * 2.5
@@ -11,8 +8,6 @@ $card-width:           640px
 $card-height:          360px
 $footer-font-size:     12px
 $footer-top-margin:    30px
-
-+font-face($font-family, font-files($font-file))
 
 =cardsize
   width: $card-width
@@ -52,7 +47,6 @@ body
 #card .message
   +background-image(radial-gradient($card-width/2 $card-height/2, #fff $card-width/3, #eee $card-width))
   +transform(rotateY(180deg))
-  font-family: $font-family
   font-size: $message-font-size
   line-height: $message-line-height
   text-align: center
