@@ -1,24 +1,10 @@
 # Greetings
 
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'greetings'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install greetings
+Web greeting card application.
 
 ## Usage
 
-TODO: Write usage instructions here
+See http://greetings.hssh.jp
 
 ## Contributing
 
@@ -27,3 +13,7 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Links
+
+1. [Redmine project](https://redmine.hssh.jp/projects/greetings)
