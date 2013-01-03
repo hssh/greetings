@@ -43,6 +43,14 @@ get '/' do
   haml :index
 end
 
+get '/:sender' do
+  @sender    = params[:sender]
+  @recipient = 'default'
+  @title     = title
+  @card      = find_card(@sender, @recipient)
+  haml :index
+end
+
 get '/:sender/to/:recipient' do
   @sender    = params[:sender]
   @recipient = params[:recipient]
