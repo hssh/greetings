@@ -1,7 +1,10 @@
+Modernizr.load({
+  test: Modernizr.csstransforms3d,
+  yep : '/js/flip-card.js',
+  nope: '/js/replace-card.js'
+});
+
 $(function() {
-    $('#card').click(function() {
-        $(this).toggleClass('flipped');
-    })
     $('#card').hover(
         function() {
             $('.arrow', this).removeClass('out').addClass('hover');
