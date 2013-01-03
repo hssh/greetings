@@ -1,18 +1,15 @@
 @import compass
 
-$font-family:          'KozMinPro-EL'
-$font-file:            '/font/KozMinPro-ExtraLight.otf'
-$font-src-format:      format('opentype')
-$background-image-url: url('/img/background.gif')
-$message-font-size:    18px
-$message-line-height:  $message-font-size * 2.5
-$fontcolor:            #888
-$card-width:           640px
-$card-height:          360px
-$footer-font-size:     12px
-$footer-top-margin:    30px
-
-+font-face($font-family, font-files($font-file))
+$background-image-url:  url('/img/background.gif')
+$arrow-left-image-url:  url('/img/arrow-left.png')
+$arrow-right-image-url: url('/img/arrow-right.png')
+$message-font-size:     18px
+$message-line-height:   $message-font-size * 2.5
+$fontcolor:             #888
+$card-width:            640px
+$card-height:           360px
+$footer-font-size:      12px
+$footer-top-margin:     30px
 
 =cardsize
   width: $card-width
@@ -25,7 +22,7 @@ $footer-top-margin:    30px
 body
   color: $fontcolor
   text-shadow: 0px 0px 1px #ccc
-  background-image: $background-image-url
+  +background-image($background-image-url)
 
 #container
   +cardsize
@@ -40,19 +37,18 @@ body
   +transition(transform 1s)
   position: absolute
 
-#card > *
+#card > div
   +fullsize
   +backface-visibility(hidden)
   +box-shadow(0 0 50px #888)
-  display: block
   position: absolute
 
 #card .image
+  +fullsize
 
 #card .message
   +background-image(radial-gradient($card-width/2 $card-height/2, #fff $card-width/3, #eee $card-width))
   +transform(rotateY(180deg))
-  font-family: $font-family
   font-size: $message-font-size
   line-height: $message-line-height
   text-align: center
@@ -65,6 +61,26 @@ body
 #card.flipped
   +transform(rotateY(-180deg))
 
+.arrow
+  +backface-visibility(hidden)
+  position: absolute
+  width: 40px
+  height: 40px
+  top: 10px
+  left: 590px
+
+.arrow-left
+  +background-image($arrow-left-image-url)
+
+.arrow-right
+  +background-image($arrow-right-image-url)
+
+.hover
+  +opacity(.1)
+
+.out
+  +opacity(.05)
+
 footer
   +text-shadow(0 0 1px #ccc)
   text-align: center
@@ -74,6 +90,5 @@ footer
 a
   +text-shadow(0 0 1px #888)
   color: $fontcolor
-  text-decoration: none
   &:hover
-    +text-shadow(0 0 1px #444)
+    +text-shadow(0 0 1px #333)

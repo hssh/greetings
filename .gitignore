@@ -10,6 +10,7 @@ _yardoc
 bundle/
 coverage
 doc/
+documents/
 lib/bundler/man
 pkg
 rdoc
